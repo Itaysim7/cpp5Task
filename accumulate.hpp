@@ -17,6 +17,7 @@ namespace itertools
     {
         T container;
         F func;
+        typedef typename T::value_type value_type;
         public:
                 accumulate (T con,F f=plus()) : container(con), func(f) {}
                 
@@ -24,7 +25,7 @@ namespace itertools
                 {
                     typename T::iterator bIter;
                     typename T::iterator eIter;
-                    decltype(*(container.begin())) result;
+                    typename T:: value_type result;
                     F func;
                     
                     
@@ -46,7 +47,7 @@ namespace itertools
                                 result=func(result,*bIter);
                             return copyIndex;
                         }
-                        iterator& operator=(iterator& other) 
+                        iterator& operator=(const iterator& other) 
                         {
                             if (*this != other)
                             {

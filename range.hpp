@@ -37,9 +37,12 @@ namespace itertools
                 iterator begin() const {return beginR;}
                 iterator end() const {return endR;}
                 range(int begin, int end) : beginR(begin), endR(end) {}
+                typedef int	value_type;
+
         private:
                 iterator beginR;
                 iterator endR; 
+
     }; //class range
     
 }//namespace itertools 
