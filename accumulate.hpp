@@ -31,7 +31,7 @@ namespace itertools
                 public:
                         iterator(typename T::iterator start, typename T::iterator end, F f) : bIter(start), eIter(end), func(f), result(*bIter){}
                         auto operator*() const {return result;}
-                        const iterator &operator++()
+                        iterator &operator++()
                         {
                             ++bIter;
                             if(bIter!=eIter)
