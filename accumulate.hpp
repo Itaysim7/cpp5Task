@@ -46,7 +46,7 @@ namespace itertools
                                 result=func(result,*bIter);
                             return copyIndex;
                         }
-                        iterator& operator=(const iterator& other) 
+                        iterator& operator=(iterator& other) 
                         {
                             if (*this != other)
                             {
